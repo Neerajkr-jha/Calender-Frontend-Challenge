@@ -1,0 +1,86 @@
+.calendar-day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; 
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.calendar-day:hover:not(.selected) {
+  background-color: var(--month-color);
+  opacity: 0.4;
+}
+
+
+/* start and end dates */
+.calendar-day.selected {
+  background-color: var(--month-color) !important;
+  color: white !important;
+  font-weight: bold;
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* range selection */
+.calendar-day.in-range {
+  background-color: var(--month-color);
+  opacity: 0.4;
+  border-radius: 30px; 
+  color: black;
+  font-size: small;
+}
+
+.calendar-day.is-today {
+  background-color: #d56868;
+  font-weight: 400;
+  font-size: large;
+  color: white;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.75rem;
+  color: white;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  background-color: var(--month-color);
+  cursor: pointer;
+}
+
+.save-btn:hover:not(:disabled) {
+  filter: brightness(0.85); 
+  transform: translateY(-1px);
+}
+
+.save-btn:disabled {
+  background-color: #d1d5db !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.note-badge {
+  background-color: var(--month-color);
+  color: #1f2937;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 10px;
+}
