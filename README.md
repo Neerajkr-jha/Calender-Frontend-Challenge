@@ -55,7 +55,7 @@ Interactive Wall Calendar is a frontend web application that replicates the aest
 
 ### Prerequisites
 - Node.js >= 18
-- npm or yarn
+- npm
 
 ### Installation
 ```bash
