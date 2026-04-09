@@ -185,7 +185,7 @@ const Calendar = () => {
         <div className="flex flex-col-reverse md:row w-full md:flex-row">
           {/* LEFT SIDE -> NOTES */}
           <div
-            className={`p-4 ${dark ? "bg-gray-50 border-gray-200" : "bg-black/90 text-white border-gray-600"} w-full md:w-1/3 flex flex-col border-b md:border-b-0 md:border-r`}
+            className={`p-4 ${dark ? "bg-gray-50 border-gray-200" : "bg-black/90 text-white border-gray-600"} w-full md:w-1/3 flex flex-col border-b md:border-b-0`}
           >
             <div className="h-8 mb-2 flex items-center">
               {start && (
