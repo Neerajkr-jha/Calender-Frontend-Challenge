@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../components/calender.css";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sun, Moon } from "lucide-react";
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [start, setStart] = useState(null);
@@ -137,18 +137,18 @@ const Calendar = () => {
 
   return (
     <div
-      className={`py-6 flex items-center justify-center min-h-screen ${dark ? "bg-red-100" : "bg-black/80"} p-4`}
+      className={`py-6 flex items-center justify-center min-h-screen ${!dark ? "bg-black/80" : "bg-red-100"} p-4`}
     >
-      <button
+      {/* <button
         className={`fixed top-3 right-3 z-50 w-12 h-6 md:w-14 md:h-8 flex items-center ${!dark ? "bg-gray-600" : "bg-gray-300"} rounded-full p-1 transition-all duration-300`}
         onClick={() => setDark(!dark)}
       >
         <div
           className={`w-4 h-4 md:w-6 md:h-6 bg-white rounded-full shadow-md transform transition-all duration-300 ${dark ? "translate-x-6 md:translate-x-6" : "translate-x-0"}`}
         />
-      </button>
+      </button> */}
       <div
-        className={`${!dark ? "bg-black/90" : "bg-white"} w-full max-w-5xl rounded-lg shadow-2xl overflow-hidden`}
+        className={`${dark ? "bg-black/90" : "bg-white"} w-full max-w-5xl rounded-lg shadow-2xl overflow-hidden`}
       >
         
         <div className={`p-6 text-white min-h-60 flex items-end relative`}>
@@ -157,6 +157,7 @@ const Calendar = () => {
             className="absolute inset-0 w-full h-full object-cover opacity-100"
             alt="month background"
           />
+          
           <button
             onClick={handlePrev}
             className="absolute top-4 left-4 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center backdrop-blur-md bg-white/10 border border-white/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_15px_rgba(0,0,0,0.3)]  hover:bg-white/25 hover:scale-105 hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_6px_20px_rgba(0,0,0,0.4)] active:scale-95 transition-all duration-200 text-white"
@@ -169,6 +170,10 @@ const Calendar = () => {
             className="absolute top-4 right-4 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center backdrop-blur-md bg-white/10 border border-white/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_15px_rgba(0,0,0,0.3)] hover:bg-white/25 hover:scale-105 hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_6px_20px_rgba(0,0,0,0.4)] active:scale-95 transition-all duration-200 text-white"
           >
             <ChevronRight size={22} />
+          </button>
+          <button onClick={() => setDark(!dark)} className="absolute bottom-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center backdrop-blur-md bg-white/10 border border-white/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_15px_rgba(0,0,0,0.3)] hover:bg-white/25 hover:scale-105 hover:shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),0_6px_20px_rgba(0,0,0,0.4)] active:scale-95 transition-all duration-200 text-white"
+          >
+            {dark ? <Moon size={18} /> : <Sun size={18} />}
           </button>
           <h2
             className="relative text-2xl md:text-5xl font-serif uppercase tracking-widest text-white px-5 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),0_8px_32px_rgba(0,0,0,0.3)]"
