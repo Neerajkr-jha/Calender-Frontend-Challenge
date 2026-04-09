@@ -140,7 +140,7 @@ const Calendar = () => {
       className={`py-6 flex items-center justify-center min-h-screen ${dark ? "bg-red-100" : "bg-black/80"} p-4`}
     >
       <button
-        className={`fixed top-3 right-3 z-50 w-12 h-6 md:w-14 md:h-8 flex items-center ${dark ? "bg-gray-600" : "bg-gray-300"} rounded-full p-1 transition-all duration-300`}
+        className={`fixed top-3 right-3 z-50 w-12 h-6 md:w-14 md:h-8 flex items-center ${!dark ? "bg-gray-600" : "bg-gray-300"} rounded-full p-1 transition-all duration-300`}
         onClick={() => setDark(!dark)}
       >
         <div
