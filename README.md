@@ -1,16 +1,85 @@
-# React + Vite
+# Interactive Wall Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 About
+Interactive Wall Calendar is a frontend web application that replicates the aesthetic and functionality of a physical wall calendar. Built with React, it allows users to navigate months, select single days or date ranges, attach notes, and view Indian festivals — all with a polished, responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Tech Stack
+- **Frontend**: React, Vite, JavaScript
+- **Styling**: Tailwind CSS, Custom CSS
+- **State Management**: React Hooks (`useState`, `useEffect`)
+- **Data Persistence**: `localStorage`
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
+- 🗓 Wall calendar aesthetic with month-specific hero images
+- 📅 Single day & date range selection with visual highlight states
+- 📝 Integrated notes section — attach notes to a day or range (up to 5 per month)
+- 🎉 Indian festival markers with tooltip on hover
+- 🌙 Dark / Light mode toggle
+- 🔍 Frosted glass UI elements (liquid mirror buttons, blurred header)
+- 💾 Notes persist across sessions via `localStorage`
+- 📱 Fully responsive — stacked on mobile, side-by-side on desktop
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Repository Structure
+```text
+/interactive-wall-calendar
+│
+├── public/
+│   └── images/               # Month hero images (jan.jpg, feb.jpg ...)
+│
+├── src/
+│   ├── components/
+│   │   ├── Calendar.jsx       # Main calendar component
+│   │   └── calender.css       # Custom CSS (calendar-day, note-badge, save-btn)
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+└── README.md
+```
+
+---
+
+## 🖥 Getting Started
+
+### Prerequisites
+- Node.js >= 18
+- npm or yarn
+
+### Installation
+```bash
+git clone https://github.com/your-username/interactive-wall-calendar.git
+cd interactive-wall-calendar
+npm install
+```
+
+### Run Locally
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 🎨 UI Highlights
+- **Hero Banner** — full-bleed month image with frosted glass title overlay
+- **Liquid Mirror Buttons** — `backdrop-blur` + `inset` box-shadow nav buttons in the banner corners
+- **Day Selection** — click once for a single day, click another to form a range; selected and in-range days styled distinctly
+- **Notes Panel** — scrollable list of saved notes with delete option, colour-coded by month accent
+- **Festival Dots** — purple dot indicator on festival days with hover tooltip
+
+---
+
+## 📦 Deployment
+Deployed on **Vercel** — [Live Demo](https://your-deployment-link.vercel.app)
